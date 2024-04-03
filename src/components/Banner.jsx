@@ -2,6 +2,7 @@ import React from "react";
 import Delivery from "../assets/delivery.png";
 import HeroBg from "../assets/heroBg.png";
 import { heroData } from "../utils/data";
+import { Link } from "react-router-dom";
 import "../index.css";
 const Banner = () => {
   return (
@@ -36,13 +37,14 @@ const Banner = () => {
           favorites, explore diverse cuisines delivered straight to your
           doorstep. Your cravings, fulfilled in a click!
         </p>
-
-        <button
-          type="button"
-          className="bg-gradient-to-br from-orange-400 to-[#ff531d] w-full md:w-auto px-4 py-2  rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
-        >
-          Order Now
-        </button>
+        <Link className="w-full md:w-auto" to="/menu">
+          <button
+            type="button"
+            className="bg-gradient-to-br from-orange-400 to-[#ff531d] w-full md:w-auto px-4 py-2  rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
+          >
+            Order Now
+          </button>
+        </Link>
       </div>
       <div className="py-2 flex-1 flex items-center relative">
         <img

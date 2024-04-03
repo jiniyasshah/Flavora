@@ -27,14 +27,14 @@ const About = () => {
           <span className="text-orange-600 text-[3rem] lg:text-[5rem]">Us</span>
         </p>
 
-        <p className="leading-10	 text-textColor text-center md:text-left md:w-[80%] text-lg">
+        <p className="leading-8	 text-textColor text-center md:text-left md:w-[80%] text-lg">
           Welcome to Flavora, your go-to destination for culinary delight. With
           an array of delectable dishes and seamless ordering, we're here to
           tantalize your taste buds and make every meal a memorable experience.
           Join us on a journey of flavor
         </p>
 
-        <Link to="/menu">
+        <Link className="w-full md:w-auto" to="/menu">
           <button
             type="button"
             className="bg-gradient-to-br from-orange-400 to-[#ff531d] w-full md:w-auto px-4 py-2  rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"

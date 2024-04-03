@@ -2,7 +2,7 @@ import React from "react";
 import Delivery from "../assets/delivery.png";
 import HeroBg from "../assets/heroBg.png";
 import { heroData } from "../utils/data";
-
+import "../index.css";
 const Banner = () => {
   return (
     <section
@@ -51,7 +51,7 @@ const Banner = () => {
           alt="hero-bg"
         />
 
-        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap">
+        <div className="grid-container w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap">
           {heroData &&
             heroData.map((n) => (
               <div

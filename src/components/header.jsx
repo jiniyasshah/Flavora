@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 function Header() {
   const [toggleLogin, setToggleLogin] = useState(false);
   const [toggleSidebar, setToggleSidebar] = useState(false);
-
+  const [showMenu, setShowMenu] = useState(false);
   const handleSidebar = () => {
     setToggleSidebar(!toggleSidebar);
   };
@@ -41,6 +41,7 @@ function Header() {
         notify("Successfully Loggedin");
       } else {
         setToggleLogin(!toggleLogin);
+        setShowMenu(!showMenu);
       }
     } catch (error) {
       console.error("Error signing in:", error.message);
@@ -53,7 +54,7 @@ function Header() {
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
         console.log(toggleLogin);
-        setToggleLogin(false);
+        setShowMenu(false);
       }
     };
 
@@ -211,7 +212,7 @@ function Header() {
                 </div>
               </div>
 
-              <div className="relative" ref={ref}>
+              <div className="relative">
                 <motion.img
                   whileTap={{ scale: 0.6 }}
                   onClick={login}
@@ -219,8 +220,9 @@ function Header() {
                   alt="User Image"
                   className="w-10 min-w-[40px] min-h-[40px] cursor-pointer rounded-3xl drop-shadow-2xl ml-8"
                 />
-                {toggleLogin && (
+                {toggleLogin && showMenu && (
                   <motion.div
+                    ref={ref}
                     initial={{ opacity: 0, scale: 0.6 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.6 }}

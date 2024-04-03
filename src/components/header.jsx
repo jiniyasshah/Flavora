@@ -179,11 +179,14 @@ function Header() {
               </Link>
             </motion.div>
             <div className="flex items-center justify-between">
-              <div className="relative flex items-center justify-center">
+              <div
+                className="relative flex items-center justify-center"
+                onClick={() => handleSidebar()}
+              >
                 <IoBasket className="text-textColor text-2xl ml-8 cursor-pointer" />
                 <div className="w-5 h-5 rounded-full bg-cartNumBg flex item-center justify-center absolute -top-1 -right-2">
                   <p className="text-xs text-white font-semibold leading-0">
-                    0
+                    {cartDetails.length}
                   </p>
                 </div>
               </div>

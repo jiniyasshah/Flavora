@@ -30,7 +30,9 @@ function App() {
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
-      setLoading(false);
+      setInterval(() => {
+        setLoading(false);
+      }, 750);
     }
   };
 

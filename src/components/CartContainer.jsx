@@ -10,7 +10,7 @@ import CartItem from "./CartItem";
 import { cartActions } from "../store/cartSlicer";
 import { Link } from "react-router-dom";
 
-const CartContainer = ({action}) => {
+const CartContainer = ({ action }) => {
   const [tot, setTot] = useState(0);
   const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -87,6 +87,7 @@ const CartContainer = ({action}) => {
             <motion.button
               whileTap={{ scale: 0.8 }}
               type="button"
+              onClick={hidecart}
               className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
             >
               <Link to="/checkout">Check out</Link>

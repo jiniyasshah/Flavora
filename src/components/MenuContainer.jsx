@@ -145,7 +145,7 @@ function MenuContainer() {
                 </p>
                 <div className="flex items-center gap-8">
                   <p className="text-lg text-headingColor font-semibold">
-                    <span className="text-sm text-red-500">$</span>{" "}
+                    <span className="text-sm text-red-500">Rs.</span>{" "}
                     {item?.price}
                   </p>
                 </div>

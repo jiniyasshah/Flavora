@@ -1,55 +1,56 @@
 import { motion } from "framer-motion";
-import { MdChevronLeft, MdChevronRight, MdShoppingBasket } from "react-icons/md";
+import {
+  MdChevronLeft,
+  MdChevronRight,
+  MdShoppingBasket,
+} from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cartSlicer";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function Fruits() {
   // User
-  const userDetails = useSelector((store) => store.user)
+  const userDetails = useSelector((store) => store.user);
   // Function to display toast notifications
   const notify = (message, type) => {
-    if(type){
+    if (type) {
       toast.error(message);
-    }else{
+    } else {
       toast(message);
     }
-  }
+  };
 
   const data = useSelector((store) => store.product);
-  
+
   const cart = useSelector((store) => store.cart);
 
   const dispatch = useDispatch();
-  const handleCart = (id) => {  
+  const handleCart = (id) => {
+    if (userDetails) {
+      // Check if any item in the cart has the same id
+      const itemExists = cart.some((item) => item.id === id);
 
-    if(userDetails){
-// Check if any item in the cart has the same id
-const itemExists = cart.some((item) => item.id === id);
-  
-if (itemExists) {
-  // Item with the id already exists in the cart
-  notify("Already in Cart", "danger");
-} else {
-  // Find the item with the matching id in the data array
-  const foundItem = data.find((item) => item.id === id);
+      if (itemExists) {
+        // Item with the id already exists in the cart
+        notify("Already in Cart", "danger");
+      } else {
+        // Find the item with the matching id in the data array
+        const foundItem = data.find((item) => item.id === id);
 
-  if (foundItem) {
-    // Dispatch action to add the item to the cart
-    dispatch(cartActions.addToCart(foundItem));
-    notify("Added to Cart");
-  } else {
-    // Item with the id does not exist in the data array
-    console.error(`Item with id ${id} not found.`);
-  }
-}
-    }else{
-      notify("User need to be loggedin", 'danger');
+        if (foundItem) {
+          // Dispatch action to add the item to the cart
+          dispatch(cartActions.addToCart(foundItem));
+          notify("Added to Cart");
+        } else {
+          // Item with the id does not exist in the data array
+          console.error(`Item with id ${id} not found.`);
+        }
+      }
+    } else {
+      notify("User need to be loggedin", "danger");
     }
-    
   };
-  
-  
+
   const handleScroll = (value) => {
     const container = document.getElementById("fruitsContainer");
     if (container) {
@@ -59,7 +60,6 @@ if (itemExists) {
 
   return (
     <section className="w-full my-6">
-
       <div className="w-full flex items-center justify-between">
         <p className="text-2xl font-semibold capitalize text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100">
           Our fresh & healthy fruits
@@ -83,7 +83,11 @@ if (itemExists) {
         </div>
       </div>
 
-      <div id="fruitsContainer" className={`w-full flex items-center gap-3 my-12 scroll-smooth overflow-x-auto scrollbar-none`} style={{ scrollBehavior: "smooth", scrollSnapType: "x mandatory" }}>
+      <div
+        id="fruitsContainer"
+        className={`w-full flex items-center gap-3 my-12 scroll-smooth overflow-x-auto scrollbar-none`}
+        style={{ scrollBehavior: "smooth", scrollSnapType: "x mandatory" }}
+      >
         {data && data.length > 0 ? (
           data.map((item) => (
             <div
@@ -119,7 +123,7 @@ if (itemExists) {
                 </p>
                 <div className="flex items-center gap-8">
                   <p className="text-lg text-headingColor font-semibold">
-                    <span className="text-sm text-red-500">$</span>{" "}
+                    <span className="text-sm text-red-500">Rs.</span>{" "}
                     {item?.price}
                   </p>
                 </div>

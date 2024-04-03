@@ -60,7 +60,7 @@ const CartContainer = ({ action }) => {
           <div className="w-full h-340 md:h-42 px-6 py-10 flex flex-col gap-3 overflow-y-scroll scrollbar-none">
             {/* cart Item */}
             {cartItems.map((item) => (
-              <CartItem key={item.id} item={item} />
+              <CartItem key={item.id} data={item} />
             ))}
           </div>
 

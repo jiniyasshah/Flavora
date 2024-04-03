@@ -39,6 +39,7 @@ function MenuContainer() {
         if (foundItem) {
           // Dispatch action to add the item to the cart
           dispatch(cartActions.addToCart(foundItem));
+
           notify("Added to Cart");
         } else {
           // Item with the id does not exist in the data array

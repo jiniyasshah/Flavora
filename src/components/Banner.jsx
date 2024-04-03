@@ -30,7 +30,7 @@ const Banner = () => {
           </span>
         </p>
 
-        <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
+        <p className="leading-8	 text-textColor text-center md:text-left md:w-[80%] text-lg">
           Flavora: Savor Every Bite! Discover culinary delights with our
           convenient food ordering platform. From gourmet meals to local
           favorites, explore diverse cuisines delivered straight to your

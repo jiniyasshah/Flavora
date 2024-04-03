@@ -28,11 +28,10 @@ const About = () => {
         </p>
 
         <p className="leading-10	 text-textColor text-center md:text-left md:w-[80%] text-lg">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          eaque fugit distinctio est nam voluptatum architecto, porro iusto
-          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
-          suscipit!
+          Welcome to Flavora, your go-to destination for culinary delight. With
+          an array of delectable dishes and seamless ordering, we're here to
+          tantalize your taste buds and make every meal a memorable experience.
+          Join us on a journey of flavor
         </p>
 
         <Link to="/menu">

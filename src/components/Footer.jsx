@@ -1,6 +1,10 @@
-import React from 'react';
-import { AiOutlineInfoCircle, AiOutlineLink, AiOutlineMail } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  AiOutlineInfoCircle,
+  AiOutlineLink,
+  AiOutlineMail,
+} from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,7 +14,9 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">About Us</h3>
           <p className="text-md leading-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero nec est luctus, vel tempus tortor laoreet. Curabitur sed dolor id ipsum tristique commodo.
+            Explore our curated selection of exquisite cuisines, effortlessly
+            ordered and delivered to your door. Enjoy culinary excellence with
+            Flavora today.
           </p>
         </div>
 
@@ -20,19 +26,30 @@ const Footer = () => {
           <ul className="grid grid-cols-2 gap-2">
             <li className="flex items-center">
               <AiOutlineLink className="mr-2" />
-              <Link to="/" className="hover:underline hover:text-blue-300">Home</Link>
+              <Link to="/" className="hover:underline hover:text-blue-300">
+                Home
+              </Link>
             </li>
             <li className="flex items-center">
               <AiOutlineLink className="mr-2" />
-              <Link to="/service" className="hover:underline hover:text-blue-300">Services</Link>
+              <Link
+                to="/service"
+                className="hover:underline hover:text-blue-300"
+              >
+                Services
+              </Link>
             </li>
             <li className="flex items-center">
               <AiOutlineLink className="mr-2" />
-              <Link to="/menu" className="hover:underline hover:text-blue-300">Menu</Link>
+              <Link to="/menu" className="hover:underline hover:text-blue-300">
+                Menu
+              </Link>
             </li>
             <li className="flex items-center">
               <AiOutlineLink className="mr-2" />
-              <Link to="/about" className="hover:underline hover:text-blue-300">About us</Link>
+              <Link to="/about" className="hover:underline hover:text-blue-300">
+                About us
+              </Link>
             </li>
           </ul>
         </div>
@@ -43,11 +60,21 @@ const Footer = () => {
           <ul className="flex flex-col gap-2">
             <li className="flex items-center">
               <AiOutlineMail className="mr-2" />
-              <a href="mailto:info@example.com" className="hover:underline hover:text-blue-300">info@example.com</a>
+              <a
+                href="mailto:info@example.com"
+                className="hover:underline hover:text-blue-300"
+              >
+                info@example.com
+              </a>
             </li>
             <li className="flex items-center">
               <AiOutlineMail className="mr-2" />
-              <a href="tel:+1234567890" className="hover:underline hover:text-blue-300">+1 (234) 567-890</a>
+              <a
+                href="tel:+1234567890"
+                className="hover:underline hover:text-blue-300"
+              >
+                +1 (234) 567-890
+              </a>
             </li>
           </ul>
         </div>

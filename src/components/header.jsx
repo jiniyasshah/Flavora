@@ -66,6 +66,7 @@ function Header() {
 
   // Function to handle logout
   const handleLogOut = () => {
+    console.log("Hello");
     signOut(firebaseAuth)
       .then(() => {
         setToggleLogin(false);
@@ -140,7 +141,7 @@ function Header() {
               </div>
             </div>
 
-            <div className="relative" ref={ref}>
+            <div className="relative">
               {userDetails && (
                 <motion.img
                   whileTap={{ scale: 0.6 }}
@@ -153,6 +154,7 @@ function Header() {
 
               {toggleLogin && (
                 <motion.div
+                  ref={ref}
                   initial={{ opacity: 0, scale: 0.6 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.6 }}

@@ -10,7 +10,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../../firebase.config";
 import { userActions } from "../store/userSlicer";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import CartContainer from "./CartContainer";
 import { signOut } from "firebase/auth";
 
@@ -47,10 +47,28 @@ function Header() {
     }
   };
 
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        console.log(toggleLogin);
+        setToggleLogin(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   // Function to handle logout
   const handleLogOut = () => {
     signOut(firebaseAuth)
       .then(() => {
+        setToggleLogin(false);
         dispatch(userActions.logOutUser());
         notify("Successfully Loggedout");
       })
@@ -191,7 +209,7 @@ function Header() {
                 </div>
               </div>
 
-              <div className="relative">
+              <div className="relative" ref={ref}>
                 <motion.img
                   whileTap={{ scale: 0.6 }}
                   onClick={login}

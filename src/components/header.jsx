@@ -204,10 +204,10 @@ function Header() {
                     initial={{ opacity: 0, scale: 0.6 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.6 }}
-                    className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0 overflow-hidden"
+                    className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute z-10 top-12 right-0 overflow-hidden"
                   >
                     {userDetails &&
-                      userDetails.email === "sauravghimire0123@gmail.com" && (
+                      userDetails.email === "jiniyasshahts@gmail.com" && (
                         <Link to="/createitems">
                           <p className="flex px-4 py-2 items-center cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">
                             <IoMdAdd className="mr-2" /> New Item
@@ -229,7 +229,7 @@ function Header() {
                         <Link to="/menu">Menu</Link>
                       </li>
                       <li className="flex px-4 py-2 items-center cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">
-                        <Link to="/Service">Services</Link>
+                        Services
                       </li>
                     </motion.ul>
                     {userDetails && (

@@ -140,7 +140,7 @@ function Header() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative" ref={ref}>
               {userDetails && (
                 <motion.img
                   whileTap={{ scale: 0.6 }}

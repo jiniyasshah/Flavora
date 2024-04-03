@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../../firebase.config";
 import { userActions } from "../store/userSlicer";
+import { cartActions } from "../store/cartSlicer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import CartContainer from "./CartContainer";
@@ -75,7 +76,9 @@ function Header() {
     signOut(firebaseAuth)
       .then(() => {
         setToggleLogin(false);
+
         dispatch(userActions.logOutUser());
+        dispatch(cartActions.clearCart());
         notify("Successfully Loggedout");
       })
       .catch((error) => {
@@ -134,6 +137,7 @@ function Header() {
                 </li>
               )}
             </motion.ul>
+
             <div
               className="relative flex items-center justify-center cursor-pointer"
               onClick={() => handleSidebar()}

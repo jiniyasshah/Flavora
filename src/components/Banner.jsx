@@ -56,7 +56,7 @@ const Banner = () => {
             heroData.map((n) => (
               <div
                 key={n.id}
-                className="  lg:w-190  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
+                className=" self-center max-sm:h-[180px] max-sm:w-[150px] lg:w-190  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
               >
                 <img
                   src={n.imageSrc}
